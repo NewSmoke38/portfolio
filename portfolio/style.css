@@ -28,6 +28,49 @@ body {
   justify-content: center;
   margin-bottom: 32px;
   overflow: hidden;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  margin-bottom: 0;
+  width: 100%;
+  position: relative;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.nav-right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-button {
+  color: #b03a6a;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-button:hover {
+  color: #d63384;
+}
+
+.nav-button.active {
+  color: #b03a6a;
+  border-bottom: 1px solid #b03a6a;
 }
 
 .header-image img {
