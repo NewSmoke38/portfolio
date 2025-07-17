@@ -70,7 +70,6 @@ body {
 
 .nav-button.active {
   color: #b03a6a;
-  border-bottom: 1px solid #b03a6a;
 }
 
 .header-image img {
@@ -113,4 +112,88 @@ body {
   color: #888;
   margin-top: 18px;
   font-style: italic;
-} 
+}
+
+.content-section {
+  display: none;
+  width: 100%;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.project-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.project-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.project-section p {
+  margin-bottom: 15px;
+}
+
+.project-section p:last-child {
+  margin-bottom: 0;
+}
+
+.project-link-arrow {
+  color: #b03a6a;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-left: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.project-link-arrow:hover {
+  color: #d63384;
+  transform: translateY(-2px);
+}
+
+.ku-links {
+  display: flex;
+  gap: 20px;
+  margin: 16px 0 8px 0;
+}
+
+.ku-links a:hover {
+  text-decoration: underline;
+}
+
+/* Add vertical spacing between links in beasty-links, matching ku-links */
+.beasty-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.airly-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.beasty-links a:hover {
+  text-decoration: underline;
+}
+
+.airly-links a:hover {
+  text-decoration: underline;
+}
+
+ 
