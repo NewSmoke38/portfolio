@@ -8,37 +8,17 @@ body {
   justify-content: center;
 }
 
-.container {
-  background: #fff;
-  max-width: 540px;
-  width: 100%;
-  margin: 40px auto;
-  padding: 0 0 32px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header-image {
-  width: 100%;
-  height: 160px;
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-  overflow: hidden;
-  position: relative;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0;
+  padding: 36px 0 5px 0;
   margin-bottom: 0;
   width: 100%;
   position: relative;
+  max-width: 540px;
+  background: #fff;
+  z-index: 1000;
 }
 
 .nav-left {
@@ -72,6 +52,20 @@ body {
   color: #b03a6a;
 }
 
+.header-image {
+  width: 100%;
+  height: 160px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  overflow: hidden;
+  position: relative;
+  max-width: 540px;
+  z-index: 999;
+}
+
 .header-image img {
   width: 100%;
   height: 100%;
@@ -79,8 +73,21 @@ body {
   display: block;
 }
 
+.container {
+  background: #fff;
+  max-width: 540px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .writing-area {
-  padding: 0 0;
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
   color: #222;
   font-size: 1.08rem;
   line-height: 1.7;
@@ -115,12 +122,20 @@ body {
 }
 
 .content-section {
+  margin-top: 0;
+  padding-top: 0;
   display: none;
   width: 100%;
+  position: relative;
 }
 
 .content-section.active {
   display: block;
+}
+
+.project-section:first-child {
+  margin-top: 20px;
+  padding-top: 0;
 }
 
 .project-section {
@@ -194,6 +209,149 @@ body {
 
 .airly-links a:hover {
   text-decoration: underline;
+}
+
+#thoughts .navbar {
+  padding: 10px 0 5px 0;
+}
+
+#thoughts .writing-area {
+  margin-bottom: 200px;
+}
+
+#thoughts.active ~ .navbar,
+#thoughts.active .navbar,
+body:has(#thoughts.active) .navbar {
+  padding: 10px 0 5px 0;
+}
+
+/* Target navbar when thoughts section is active */
+body.thoughts-active .navbar {
+  padding: 5px 0 5px 0;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 100px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.contact-link {
+  color: #b03a6a;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  padding: 2px 0;
+}
+
+.contact-link:hover {
+  color: #d63384;
+  text-decoration: underline;
+}
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 0 0 20px 0;
+  }
+  
+  .navbar {
+    padding: 20px 0 5px 0;
+    max-width: 95%;
+  }
+  
+  .nav-right {
+    gap: 20px;
+  }
+  
+  .nav-button {
+    font-size: 14px;
+  }
+  
+  .header-image {
+    height: 120px;
+    max-width: 95%;
+  }
+  
+  .writing-area {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+  
+  .project-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .project-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .ku-links,
+  .beasty-links,
+  .airly-links {
+    flex-direction: column;
+    gap: 1px;
+    align-items: flex-start;
+  }
+  
+  .ku-links a,
+  .beasty-links a,
+  .airly-links a {
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 98%;
+    margin: 10px auto;
+  }
+  
+  .navbar {
+    padding: 15px 0 5px 0;
+    max-width: 98%;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+  
+  .nav-button {
+    font-size: 13px;
+  }
+  
+  .header-image {
+    height: 100px;
+    max-width: 98%;
+  }
+  
+  .writing-area {
+    font-size: 0.95rem;
+    padding: 0 5px;
+  }
+  
+  .project-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+  }
+  
+  .project-section h3 {
+    font-size: 1.1rem;
+  }
+  
+  .highlight-yellow,
+  .highlight-blue,
+  .highlight-pink {
+    padding: 0 1px;
+  }
 }
 
  
