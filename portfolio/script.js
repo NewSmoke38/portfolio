@@ -1,3 +1,5 @@
+console.log('Blog landing page loaded.');
+
 document.addEventListener('DOMContentLoaded', function() {
   // Get all navigation buttons
   const navButtons = document.querySelectorAll('.navbar-link');
@@ -13,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
       navButtons.forEach(btn => btn.classList.remove('active'));
       contentSections.forEach(section => section.classList.remove('active'));
       
+      // Remove body classes
+      document.body.classList.remove('thoughts-active', 'projects-active', 'home-active');
+      
       // Add active class to clicked button
       this.classList.add('active');
       
@@ -23,18 +28,42 @@ document.addEventListener('DOMContentLoaded', function() {
       // Show the target section
       if (targetSection) {
         targetSection.classList.add('active');
+        // Add body class for CSS targeting
+        document.body.classList.add(targetId + '-active');
       }
       
       // Change header image based on section
       if (targetId === 'thoughts') {
         headerImage.src = 'assets/thoughts.png';
         headerImage.alt = 'Thoughts Header Image';
+        // Direct navbar styling for thoughts - match home page
+        const navbar = document.querySelector('.navbar');
+        navbar.style.padding = '36px 0 5px 0';
+        navbar.style.marginTop = '';
+        // Adjust header image spacing for thoughts
+        const headerImageContainer = document.querySelector('.header-image');
+        headerImageContainer.style.marginTop = '0px';
+        console.log('Thoughts clicked - navbar padding set to:', navbar.style.padding);
       } else if (targetId === 'projects') {
         headerImage.src = 'assets/project.png';
         headerImage.alt = 'Projects Header Image';
+        // Reset navbar styling for other pages
+        const navbar = document.querySelector('.navbar');
+        navbar.style.padding = '36px 0 5px 0';
+        navbar.style.marginTop = '';
+        // Reset header image spacing
+        const headerImageContainer = document.querySelector('.header-image');
+        headerImageContainer.style.marginTop = '';
       } else {
         headerImage.src = 'assets/pic.png';
         headerImage.alt = 'Header Image';
+        // Reset navbar styling for other pages
+        const navbar = document.querySelector('.navbar');
+        navbar.style.padding = '36px 0 5px 0';
+        navbar.style.marginTop = '';
+        // Reset header image spacing
+        const headerImageContainer = document.querySelector('.header-image');
+        headerImageContainer.style.marginTop = '';
       }
     });
   });
