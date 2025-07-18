@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Change header image based on section
       if (targetId === 'thoughts') {
-        headerImage.src = 'assets/thoughts.png';
+        headerImage.src = 'thoughts.png';
         headerImage.alt = 'Thoughts Header Image';
         // Direct navbar styling for thoughts - match home page
         const navbar = document.querySelector('.navbar');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         headerImageContainer.style.marginTop = '0px';
         console.log('Thoughts clicked - navbar padding set to:', navbar.style.padding);
       } else if (targetId === 'projects') {
-        headerImage.src = 'assets/project.png';
+        headerImage.src = 'project.png';
         headerImage.alt = 'Projects Header Image';
         // Reset navbar styling for other pages
         const navbar = document.querySelector('.navbar');
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const headerImageContainer = document.querySelector('.header-image');
         headerImageContainer.style.marginTop = '';
       } else {
-        headerImage.src = 'assets/pic.png';
+        headerImage.src = 'pic.png';
         headerImage.alt = 'Header Image';
         // Reset navbar styling for other pages
         const navbar = document.querySelector('.navbar');
