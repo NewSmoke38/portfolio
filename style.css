@@ -121,6 +121,13 @@ body {
   font-style: italic;
 }
 
+.quote-block {
+  border-left: 3px solid #eee;
+  padding-left: 15px;
+  color: #666;
+  margin-left: 0;
+}
+
 .content-section {
   margin-top: 0;
   padding-top: 0;
@@ -211,29 +218,13 @@ body {
   text-decoration: underline;
 }
 
-#thoughts .navbar {
-  padding: 10px 0 5px 0;
-}
 
-#thoughts .writing-area {
-  margin-bottom: 200px;
-}
-
-#thoughts.active ~ .navbar,
-#thoughts.active .navbar,
-body:has(#thoughts.active) .navbar {
-  padding: 10px 0 5px 0;
-}
-
-/* Target navbar when thoughts section is active */
-body.thoughts-active .navbar {
-  padding: 5px 0 5px 0;
-}
 
 .contact-links {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
   margin-top: 100px;
   padding-top: 20px;
   border-top: 1px solid #eee;
@@ -244,12 +235,85 @@ body.thoughts-active .navbar {
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
-  padding: 2px 0;
+  padding: 5px 0;
 }
 
 .contact-link:hover {
   color: #d63384;
   text-decoration: underline;
+}
+
+/* Full-width layout for Projects page */
+body.projects-active .container {
+  max-width: 60%;
+}
+
+body.projects-active .navbar {
+  max-width: 60%;
+  justify-content: center;
+}
+
+body.projects-active .nav-right {
+  display: none;
+}
+
+body.projects-active .header-image {
+  display: none;
+}
+
+/* Sticky banner for Thoughts page */
+body.thoughts-active .header-image {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Project Section Layout */
+.project-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.project-video {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Apply flex layout only when projects are active and screen is wide enough */
+body.projects-active .project-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Responsive adjustments for projects page */
+@media screen and (max-width: 900px) {
+  body.projects-active .project-section {
+    flex-direction: column;
+  }
+
+  .project-info {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .project-video {
+    width: 100%;
+    min-height: 200px;
+  }
 }
 
 /* Responsive Design for Mobile Devices */
@@ -259,51 +323,53 @@ body.thoughts-active .navbar {
     margin: 20px auto;
     padding: 0 0 20px 0;
   }
-  
+
   .navbar {
     padding: 20px 0 5px 0;
     max-width: 95%;
   }
-  
+
   .nav-right {
     gap: 20px;
   }
-  
+
   .nav-button {
     font-size: 14px;
   }
-  
+
   .header-image {
     height: 120px;
     max-width: 95%;
   }
-  
+
   .writing-area {
     font-size: 1rem;
     line-height: 1.6;
     padding: 0 10px;
   }
-  
+
   .project-section {
     margin-bottom: 30px;
     padding-bottom: 20px;
   }
-  
+
   .project-section h3 {
     font-size: 1.2rem;
   }
-  
+
   .ku-links,
   .beasty-links,
-  .airly-links {
+  .airly-links,
+  .sedm-links {
     flex-direction: column;
     gap: 1px;
     align-items: flex-start;
   }
-  
+
   .ku-links a,
   .beasty-links a,
-  .airly-links a {
+  .airly-links a,
+  .sedm-links a {
     font-size: 14px;
   }
 }
@@ -313,40 +379,41 @@ body.thoughts-active .navbar {
   .container {
     max-width: 98%;
     margin: 10px auto;
+    padding: 0 0 10px 0;
   }
-  
+
   .navbar {
     padding: 15px 0 5px 0;
     max-width: 98%;
   }
-  
+
   .nav-right {
     gap: 15px;
   }
-  
+
   .nav-button {
     font-size: 13px;
   }
-  
+
   .header-image {
     height: 100px;
     max-width: 98%;
   }
-  
+
   .writing-area {
     font-size: 0.95rem;
     padding: 0 5px;
   }
-  
+
   .project-section {
     margin-bottom: 25px;
     padding-bottom: 15px;
   }
-  
+
   .project-section h3 {
     font-size: 1.1rem;
   }
-  
+
   .highlight-yellow,
   .highlight-blue,
   .highlight-pink {
@@ -354,6 +421,10 @@ body.thoughts-active .navbar {
   }
 }
 
-
-
- 
+.project-video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
