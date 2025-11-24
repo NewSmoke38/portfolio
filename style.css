@@ -113,6 +113,13 @@ body {
   padding: 0 2px;
 }
 
+.slim-faded-text {
+  font-weight: 300;
+  color: #3a5a8c;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
 .author {
   text-align: right;
   font-size: 0.98rem;
